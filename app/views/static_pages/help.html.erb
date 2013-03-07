@@ -1,8 +1,16 @@
-<% provide(:title,'Help')%>
-<title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %>></title>
+<!DOCTYPE html>
+<% provide(:h1,'from helper page')%>
+<html>
+<head>
+<h1><%= full_title(yield(:h1)) %></h1>
+
+</head>
+<body>
 <p>
   This is the help page for the
   <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
   sample app
 </p>
 
+</body>
+</html>
