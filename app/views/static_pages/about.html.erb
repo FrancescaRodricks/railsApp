@@ -1,7 +1,16 @@
-<title>Ruby on Rails Tutorial Sample App | About</title>
+<!DOCTYPE html>
+<% provide(:title,'Ruby on Rails Tutorial Sample App | About')%>
+<html>
+<head>
+
+<title><%= full_title(yield(:title))%></title>
+</head>
+<body>
 <p>
   This is the about us page for the
   <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
   sample app
 </p>
+</body>
+</html>
 

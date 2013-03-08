@@ -1,10 +1,10 @@
 module ApplicationHelper
-  def full_title(h1)
-    base_h1="This is a base title"
-    if h1.empty?
-        base_h1
+  def full_title(title)
+    base_title="Welcome to Ruby On Rails"
+    if title.empty?
+        base_title
         else
-    "#{h1}| #{base_h1}"
+    "#{title}| #{base_title}"
     end
   end
 end
