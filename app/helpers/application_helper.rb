@@ -1,4 +1,7 @@
 module ApplicationHelper
+
+  include SessionsHelper
+
   def full_title(title)
     base_title="Welcome to Ruby On Rails"
     if title.empty?

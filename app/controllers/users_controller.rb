@@ -43,10 +43,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     respond_to do |format|
-      if @user.save
-        flash[:success] = "Welcome to the Rails Application. User was successfully created."
+      if (@user.save)
 
-        format.html { redirect_to @user }
+        flash[:success] = "Welcome to the Rails Application. User was successfully created."
+       format.html { redirect_to @user }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
