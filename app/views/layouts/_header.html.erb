@@ -7,17 +7,7 @@
         <ul class="nav pull-right">
           <li><%= link_to "Home Page", home_path %></li>
           <li><%= link_to "Help Page", help_path %></li>
-          <% if signed_in? %>
-              <li><%= link_to "Users", '#' %></li>
 
-                  <li><%= link_to "Profile", current_user %></li>
-                  <li><%= link_to "Settings", '#' %></li>
-                  <li class="divider"></li>
-                  <li><%= link_to "Sign out", sign_out_path, method: "delete" %></li>
-
-          <% else %>
-              <li><%= link_to "Sign in", sign_in_path %></li>
-          <% end %>
 
         </ul>
       </nav>
