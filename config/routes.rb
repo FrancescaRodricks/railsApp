@@ -12,7 +12,7 @@ RailsApp::Application.routes.draw do
   match '/sign_up', to: 'users#new'
   match '/sign_in', to: 'sessions#new'
   match '/sign_out', to: 'sessions#destroy' , via: :delete
-
+  match '/index', to: 'users#index'
 
   resources :microposts
   resources :users
