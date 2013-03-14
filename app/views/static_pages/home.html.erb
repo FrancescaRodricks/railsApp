@@ -5,6 +5,46 @@
 </head>
 
 <body>
+<% if signed_in? %>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <p style="font-size: 2em;">
+            <%= current_user.name %>
+          </p>
+          <a href="<%= user_path(current_user) %>">
+            <%= gravatar_for current_user %>
+          </a>
+
+<span>
+  <%= link_to "view my profile", current_user %>
+</span>
+          <br/>
+<span>
+  <%= pluralize(current_user.microposts.count, "micropost") %>
+</span>
+        </section>
+        <section>
+          <br/>
+          <%= form_for(@micropost) do |f| %>
+              <% if @micropost.errors.any? %>
+                <ul>
+                    <% flash[:error] = @micropost.errors.full_messages.each do  | msg | %>
+                <% end %>
+                </ul>
+              <% end %>
+
+              <div class="field">
+                <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+              </div>
+              <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </section>
+      </aside>
+    </div>
+<% else %>
+
+
 <div class="center hero-unit">
   <h1>This is my first hosted application on heroku </h1>
   <h2>
@@ -17,4 +57,5 @@
 
     <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org' %>
 </body>
+    <% end %>
 </html>

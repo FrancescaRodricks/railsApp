@@ -14,7 +14,7 @@ RailsApp::Application.routes.draw do
   match '/sign_out', to: 'sessions#destroy' , via: :delete
   match '/index', to: 'users#index'
 
-  resources :microposts
+  resources :microposts, only: [:create, :destroy]
   resources :users
   resources :sessions, only: [:new ,:create , :destroy]
 
